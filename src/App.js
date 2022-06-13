@@ -1,25 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
-import Navbar from "./components/Navbar"; 
-import HomePage from './pages/HomePage';
-import SignupPage from './pages/SignupPage';
+import "./App.css";
+import Navbar from "./components/Navbar";
+import HomePage from "./pages/HomePage";
+import SignupPage from "./pages/SignupPage";
 import { Routes, Route } from "react-router-dom";
 import LoginPage from "./pages/LoginPage";
 import IsAnon from "./components/IsAnon";
-import Allplants from './pages/AllPlants';
+import Allplants from "./pages/AllPlants";
 import IsPrivate from "./components/IsPrivate";
-import LogOutPage from './pages/LogOutPage';
-import MyPlants from './pages/MyPlants';
-
+import LogOutPage from "./pages/LogOutPage";
+import MyPlants from "./pages/MyPlants";
+import Plant from "./pages/Plant";
+import IsLoggedIn from "./components/IsLoggedIn";
 
 function App() {
   return (
     <div className="App">
- <Navbar />
-    <Routes>
-    <Route path="/" element={<HomePage />} />
+      <Navbar />
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <IsLoggedIn>
+              <HomePage />
+            </IsLoggedIn>
+          }
+        />
 
-    <Route
+        <Route
           path="/generalplants"
           element={
             <IsPrivate>
@@ -27,15 +34,17 @@ function App() {
             </IsPrivate>
           }
         />
-        <Route path="/plant/:id" element={
-        
-        <IsPrivate>
-        <MyPlants />
-        </IsPrivate>
-        }/>
+        <Route
+          path="/plant/:id"
+          element={
+            <IsPrivate>
+              <Plant />
+            </IsPrivate>
+          }
+        />
 
-<Route
-          path="/plant"
+        <Route
+          path="/myplants"
           element={
             <IsPrivate>
               <MyPlants />
@@ -43,11 +52,12 @@ function App() {
           }
         />
 
- <Route path="/signup"
+        <Route
+          path="/signup"
           element={
             <IsAnon>
               <SignupPage />
-              </IsAnon>
+            </IsAnon>
           }
         />
         <Route
@@ -55,7 +65,7 @@ function App() {
           element={
             <IsAnon>
               <LoginPage />
-              </IsAnon>
+            </IsAnon>
           }
         />
         <Route
@@ -63,10 +73,10 @@ function App() {
           element={
             <IsAnon>
               <LogOutPage />
-              </IsAnon>
+            </IsAnon>
           }
         />
- </Routes>
+      </Routes>
     </div>
   );
 }

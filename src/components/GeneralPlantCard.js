@@ -1,26 +1,26 @@
-import React from 'react'
+import React from "react";
 import { Link } from "react-router-dom";
 
- function GeneralPlantCard({ image, name, id,description, lightRequirement, waterRequirement }) {
+function GeneralPlantCard({
+  image,
+  name,
+  id,
+  description,
+  lightRequirement,
+  waterRequirement,
+}) {
   return (
-    <div className="PlantCard">
-    <Link to={`/generalplants/${id}`}>
-        
-      </Link>
-      <h3>{image}</h3>
-      <p style={{ maxWidth: "400px" }}>{name} </p>
-      <p>{description}</p>
-      <p>Light requirement: {lightRequirement}</p>
-      <p>Water requirement: {waterRequirement}</p>
-       
-        
-        <Link to={`/plant/${id}`}>
-        <button>Save</button>
-              </Link>
-    
-    </div>
-  )
+    <Link to={`/plant/${id}`}>
+      <div className="PlantCard">
+        {/*   <h3>{image}</h3> */}
+        <img src={image} alt="drive-image" />
+        <p style={{ maxWidth: "400px" }}>{name} </p>
+        <p>{description}</p>
+        <p>Light requirement: {lightRequirement}</p>
+        <p>Water requirement: {waterRequirement}</p>
+      </div>
+    </Link>
+  );
 }
-
 
 export default GeneralPlantCard;
