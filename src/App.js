@@ -35,7 +35,7 @@ function App() {
           }
         />
         <Route
-          path="/plant/:id"
+          path="/plants/:id"
           element={
             <IsPrivate>
               <Plant />

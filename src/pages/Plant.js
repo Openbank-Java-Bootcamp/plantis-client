@@ -1,9 +1,11 @@
 import React from "react";
 import {getPlantsById} from "../services/index"
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
-import GeneralPlantCard from "../components/GeneralPlantCard";
-import {postPlantsByUserId} from "../services/index"
+import { useParams, Link } from "react-router-dom";
+import PlantCard from "../components/PlantCard";
+import {getPlantsByFavourite} from "../services/index"
+
+
 
  const Plant = () => {
     const [plant, setPlant] = useState([]);
@@ -22,9 +24,9 @@ import {postPlantsByUserId} from "../services/index"
  return (
     <div>MyPlant
     
-    <GeneralPlantCard {...plant} />
-    <p>Add this plant to your </p>
-    <button onClick = {() => postPlantsByUserId(id)}>Add</button>
+    <PlantCard {...plant} />
+    <p>Add this plant to your profile</p>
+    <Link to = '/myplants'><button onClick = {() => getPlantsByFavourite(id)}>Add</button></Link>
     </div>
  )
 }

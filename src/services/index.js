@@ -20,9 +20,9 @@ export function getPlantsById(id) {
     .catch((error) => console.log(error));
 }
 
-export function postPlantsByUserId(plantId) {
+export function getPlantsByFavourite(plantId) {
   return axios
-    .get(`${API_URL}/api/plant/favorite/${plantId}`, {
+    .get(`${API_URL}/api/plants/favourite/${plantId}`, {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("authToken")}`,
       },
@@ -34,7 +34,7 @@ export function postPlantsByUserId(plantId) {
 export function getPlantsByUserId(userId) {
   return axios
     .get(
-      `${API_URL}/api/plant`,
+      `${API_URL}/api/plants`,
       {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("authToken")}`,
@@ -48,9 +48,18 @@ export function getPlantsByUserId(userId) {
 
 export function deletePlant(plantId) {
   return axios
-    .delete(`${API_URL}/api/favorite/${plantId}`, {
+    .delete(`${API_URL}/api/favourite/${plantId}`, {
       headers: { Authorization: `Bearer ${localStorage.getItem("authToken")}` },
     })
     .then((response) => response.data)
     .catch((error) => console.log(error));
+}
+
+export function deletePlantFromFavs(plantId) {
+    return axios
+        .delete(`${API_URL}/api/favourite/${plantId}`, {  
+        headers: { Authorization: `Bearer ${localStorage.getItem("authToken")}`},
+        })
+        .then((response) => response.data)  
+        .catch((error) => console.log(error));
 }
