@@ -36,13 +36,9 @@ const API_URL = "http://localhost:5005";
   };
 
   return (
-    <div className="SignupPage">
-     
-    
-    
-    
+    <div>
       <form onSubmit={handleSignupSubmit} className="register">
-      <h1>Sign up here!</h1>
+      <h1>Sign up here!</h1><br/>
       <div className="section">
         <label>E-mail*:
         <input type="email" name="email" value={email} onChange={handleEmail} />
@@ -68,7 +64,7 @@ const API_URL = "http://localhost:5005";
       <div class="error-message">
       {errorMessage && <p className="err-message">{errorMessage}</p>}
       </div>
-      <p>Already have account?</p>
+      <p>Already have an account?</p>
       <Link to={"/login"}> Login</Link>
       </form>
 
