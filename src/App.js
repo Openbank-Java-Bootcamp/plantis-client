@@ -11,6 +11,7 @@ import LogOutPage from "./pages/LogOutPage";
 import MyPlants from "./pages/MyPlants";
 import Plant from "./pages/Plant";
 import IsLoggedIn from "./components/IsLoggedIn";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
         />
 
         <Route
+        
           path="/generalplants"
           element={
             <IsPrivate>
@@ -76,6 +78,7 @@ function App() {
             </IsAnon>
           }
         />
+        
       </Routes>
     </div>
   );

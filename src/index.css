@@ -96,7 +96,7 @@ width: 190px;
       text-align: center;
       margin: 5% 0;
   }
-/* signup */
+
   .register {
     position: absolute;
     top: 55%;
@@ -149,5 +149,10 @@ width: 190px;
   color: red;
 }
 
-/* login */
+.footer {
+  width: 100%;
+  height: 150px;
+  background: #fdfdfd;
+  position: absolute; 
+}
 

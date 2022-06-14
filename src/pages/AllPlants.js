@@ -4,6 +4,7 @@ import Navbar from "../components/Navbar";
 
 import GeneralPlantCard from "../components/GeneralPlantCard";
 import { getPlants } from "../services";
+import Footer from "../components/Footer";
 
 function AllPlants() {
   const [generalPlants, setGeneralPlants] = useState([]);
@@ -28,6 +29,7 @@ function AllPlants() {
       {generalPlants.map((plant) => (
         <GeneralPlantCard key={plant.id} {...plant} />
       ))}
+      <Footer />
     </div>
   );
 }

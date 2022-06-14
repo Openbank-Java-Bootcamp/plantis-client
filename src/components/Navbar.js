@@ -7,6 +7,7 @@ function Navbar() {
   const { isLoggedIn, user, logOutUser } = useContext(AuthContext);
 
   return (
+    <div>
     <nav className="Navbar">
       <Link to="/generalplants">
         <button>Home</button>
@@ -34,7 +35,10 @@ function Navbar() {
           </Link>
         </>
       )}
+    
     </nav>
+    
+    </div>
   );
 }
 

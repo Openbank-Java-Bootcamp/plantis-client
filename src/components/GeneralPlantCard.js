@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Footer from "./Footer";
 
 function GeneralPlantCard({
   image,
@@ -10,6 +11,9 @@ function GeneralPlantCard({
   waterRequirement,
 }) {
   return (
+    
+    <div>
+    
     <Link to={`/plants/${id}`}>
       <div className="PlantCard">
       
@@ -20,6 +24,9 @@ function GeneralPlantCard({
         <p>Water requirement: {waterRequirement}</p> */}
       </div>
     </Link>
+    
+    </div>
+    
   );
 }
 
