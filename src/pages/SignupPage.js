@@ -2,6 +2,7 @@ import React from 'react'
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+import video from '../images/video.mp4'
 
 const API_URL = "http://localhost:5005";
 
@@ -48,7 +49,7 @@ const API_URL = "http://localhost:5005";
         </label>
       </div>
       <div className="section">
-        <label>Password:
+        <label>Password*:
         <input
           type="password"
           name="password"
@@ -58,17 +59,23 @@ const API_URL = "http://localhost:5005";
         </label>
         </div>
         <div className="section">
-        <label>Name:
+        <label>Name*:
         <input type="text" name="name" value={name} onChange={handleName} />
         </label>
-</div>
+      </div>
         <button type="submit">Sign Up</button>
-      </form>
-
-      {errorMessage && <p className="error-message">{errorMessage}</p>}
-
+      
+      <div class="error-message">
+      {errorMessage && <p className="err-message">{errorMessage}</p>}
+      </div>
       <p>Already have account?</p>
       <Link to={"/login"}> Login</Link>
+      </form>
+
+      <video autoPlay loop id="video_background" preload="auto" muted >
+   <source src={video} type="video/mp4" />
+ </video>
+
     </div>
   );
 }
