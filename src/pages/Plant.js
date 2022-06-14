@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import PlantCard from "../components/PlantCard";
 import {getPlantsByFavourite} from "../services/index"
-
+import Navbar from "../components/Navbar";
 
 
  const Plant = () => {
@@ -22,8 +22,10 @@ import {getPlantsByFavourite} from "../services/index"
     }, []);
 
  return (
-    <div>MyPlant
     
+    <div>MyPlant
+
+<Navbar />
     <PlantCard {...plant} />
     <p>Add this plant to your profile</p>
     <Link to = '/myplants'><button onClick = {() => getPlantsByFavourite(id)}>Add</button></Link>

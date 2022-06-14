@@ -36,25 +36,32 @@ const API_URL = "http://localhost:5005";
 
   return (
     <div className="SignupPage">
-      <h1>Sign Up</h1>
+     
     
     
     
-      <form onSubmit={handleSignupSubmit}>
-        <label>Email:</label>
+      <form onSubmit={handleSignupSubmit} className="register">
+      <h1>Sign up here!</h1>
+      <div className="section">
+        <label>E-mail*:
         <input type="email" name="email" value={email} onChange={handleEmail} />
-
-        <label>Password:</label>
+        </label>
+      </div>
+      <div className="section">
+        <label>Password:
         <input
           type="password"
           name="password"
           value={password}
           onChange={handlePassword}
         />
-
-        <label>Name:</label>
+        </label>
+        </div>
+        <div className="section">
+        <label>Name:
         <input type="text" name="name" value={name} onChange={handleName} />
-
+        </label>
+</div>
         <button type="submit">Sign Up</button>
       </form>
 

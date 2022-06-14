@@ -1,6 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
-
+import Navbar from "../components/Navbar";
 
 import GeneralPlantCard from "../components/GeneralPlantCard";
 import { getPlants } from "../services";
@@ -19,7 +19,9 @@ function AllPlants() {
   }, []);
 
   return (
+    
     <div className="general-plants-page">
+    <Navbar />
       <h1>AllPlants</h1>
 
      

@@ -1,7 +1,7 @@
 import React from "react";
 import { getPlantsByUserId } from "../services/index";
 /* import { getPlantsByFavourite } from "../services/index"; */
-
+import Navbar from "../components/Navbar";
 
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
@@ -26,7 +26,7 @@ const MyPlant = () => {
 
   return (
     <div>
-      
+      <Navbar />
       My Plants
       {favouritePlant.map((favouritePlant) => ( 
       <MyPlantCard  {...favouritePlant} />

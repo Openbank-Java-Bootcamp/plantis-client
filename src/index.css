@@ -1,4 +1,4 @@
-body {
+/* body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -10,9 +10,92 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+} */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a{
+  text-decoration: none!important;
+  
 }
 
 .plant-images{
   height: 200px;
 width: 190px;
 }
+/* logo homepage */
+.main-logo{
+  max-width: 180px;
+ /*  background-color: rgba(255, 255, 255, 0.322); */
+  border-radius: 120%;
+  padding: 10px;
+}
+.signup a,.login a{
+  display: block;
+  text-decoration: none;
+  text-align: center;
+  color: #ffffff!important;
+  max-width:200px;
+  padding:8px;
+  margin:auto;
+  padding: 15px;
+  font-size: 16pt;
+  background-color: #4e7441;
+  border-radius: 50px;
+  transition-duration: 0.4s;
+  }
+.main-text{
+  width:50%;
+  padding:8px;
+  margin:auto;
+  color: #ffffff;
+  text-align: center;
+  font-size: 18pt;
+}
+.home-background{
+  background-color: #4e744163;
+  width:50%;
+  padding:8px;
+  margin:auto;
+  border-radius: 50px;
+}
+.main-page{
+  width: 100%;
+  height: auto;
+  text-align: center;
+}
+/* video */
+#video_background {
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  right: 0px;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -1000;
+  overflow: hidden;
+  }
+
+  #video_pattern {
+    background:#fff;
+    position: fixed;
+    opacity: 0.8;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    }
+
+    /* signup and login */
+    .signup,.login{
+      text-align: center;
+      margin: 5% 0;
+  }
+
+  
+

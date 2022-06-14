@@ -1,5 +1,5 @@
 import "./App.css";
-import Navbar from "./components/Navbar";
+
 import HomePage from "./pages/HomePage";
 import SignupPage from "./pages/SignupPage";
 import { Routes, Route } from "react-router-dom";
@@ -15,7 +15,7 @@ import IsLoggedIn from "./components/IsLoggedIn";
 function App() {
   return (
     <div className="App">
-      <Navbar />
+      
       <Routes>
         <Route
           path="/"
