@@ -13,7 +13,7 @@ function Navbar() {
 
       {isLoggedIn && (
         <>
-          <Link to="/plant">
+          <Link to="/myplants">
             <button>My plants</button>
           </Link>
           <Link to="/logout">

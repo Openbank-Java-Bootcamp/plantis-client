@@ -1,6 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import AddPlants from "../components/AddPlants";
+
+
 import GeneralPlantCard from "../components/GeneralPlantCard";
 import { getPlants } from "../services";
 
@@ -21,7 +22,7 @@ function AllPlants() {
     <div className="general-plants-page">
       <h1>AllPlants</h1>
 
-      {/*  <AddPlants refreshProjects={getGeneralPlants} /> */}
+     
       {generalPlants.map((plant) => (
         <GeneralPlantCard key={plant.id} {...plant} />
       ))}

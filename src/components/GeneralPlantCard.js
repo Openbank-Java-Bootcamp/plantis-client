@@ -13,7 +13,7 @@ function GeneralPlantCard({
     <Link to={`/plant/${id}`}>
       <div className="PlantCard">
       
-        <img src={image} alt="drive-image" className="plant-images"/>
+        <img src={image} alt="" className="plant-images"/>
         <p style={{ maxWidth: "400px" }}>{name} </p>
         <p>{description}</p>
         <p>Light requirement: {lightRequirement}</p>

@@ -3,6 +3,7 @@ import {getPlantsById} from "../services/index"
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import GeneralPlantCard from "../components/GeneralPlantCard";
+import {postPlantsByUserId} from "../services/index"
 
  const Plant = () => {
     const [plant, setPlant] = useState([]);
@@ -22,7 +23,8 @@ import GeneralPlantCard from "../components/GeneralPlantCard";
     <div>MyPlant
     
     <GeneralPlantCard {...plant} />
-    <button>Favoritos</button>
+    <p>Add this plant to your </p>
+    <button onClick = {() => postPlantsByUserId(id)}>Add</button>
     </div>
  )
 }
