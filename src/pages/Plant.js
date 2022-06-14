@@ -19,7 +19,7 @@ import GeneralPlantCard from "../components/GeneralPlantCard";
     }, []);
 
  return (
-    <div>Plant
+    <div>MyPlant
     
     <GeneralPlantCard {...plant} />
     <button>Favoritos</button>

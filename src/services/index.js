@@ -20,3 +20,14 @@ export function getPlantsById(id) {
       .then((response) => response.data)
       .catch((error) => console.log(error));
   }
+
+
+  export function getPlantsByUserId(userId, plantId) {
+
+    return axios
+      .get(`${API_URL}/api/${userId}/favorite/${plantId}`, {
+        headers: { Authorization: `Bearer ${localStorage.getItem("authToken")}` },
+      })
+      .then((response) => response.data)
+      .catch((error) => console.log(error));
+  }
