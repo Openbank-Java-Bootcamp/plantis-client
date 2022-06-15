@@ -7,7 +7,6 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import MyPlantCard from "../components/MyPlantCard";
 
-
 const MyPlant = () => {
   const [favouritePlant, setFavouritePlant] = useState([]);
   const { userId } = useParams();
@@ -22,20 +21,19 @@ const MyPlant = () => {
     getFavouritePlant();
   }, []);
 
-  
-
   return (
     <div>
       <Navbar />
       My Plants
-      {favouritePlant.map((favouritePlant) => ( 
-      <MyPlantCard  {...favouritePlant} />
-      
+      {favouritePlant.map((favouritePlant) => (
+        <MyPlantCard
+          getFavouritePlant={getFavouritePlant}
+          {...favouritePlant}
+        />
       ))}
-
       <Footer />
     </div>
-  )
-}
-  
+  );
+};
+
 export default MyPlant;

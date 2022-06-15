@@ -316,8 +316,12 @@ nav a:hover::before {
     padding-top:20px;
 }
 
-
-
+.title-plant-card{
+  font-weight: bold;
+}
+.text-info-plant{
+  
+}
 
 /* /* search */
 /* .visually-hidden {

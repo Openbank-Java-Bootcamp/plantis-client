@@ -20,14 +20,16 @@ export function getPlantsById(id) {
     .catch((error) => console.log(error));
 }
 
-export function getPlantsByFavourite(plantId) {
+export function getPlantsByFavourite(plantId, navigate) {
   return axios
     .get(`${API_URL}/api/plants/favourite/${plantId}`, {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("authToken")}`,
       },
     })
-    .then((response) => response.data)
+    .then((response) => {
+      navigate("/myplants");
+    })
     .catch((error) => console.log(error));
 }
 
@@ -49,7 +51,19 @@ export function getPlantsByUserId(userId) {
     .catch((error) => console.log(error));
 }
 
-export function deletePlant(plantId) {
+export function deletePlant(plantId, getFavouritePlant) {
+  //console.log(props);
+  return axios
+    .delete(`${API_URL}/api/favourite/${plantId}`, {
+      headers: { Authorization: `Bearer ${localStorage.getItem("authToken")}` },
+    })
+    .then((response) => {
+      getFavouritePlant();
+    })
+    .catch((error) => console.log(error));
+}
+
+export function deletePlantFromFavs(plantId) {
   return axios
     .delete(`${API_URL}/api/favourite/${plantId}`, {
       headers: { Authorization: `Bearer ${localStorage.getItem("authToken")}` },
@@ -57,10 +71,11 @@ export function deletePlant(plantId) {
     .then((response) => response.data)
     .catch((error) => console.log(error));
 }
-
-export function deletePlantFromFavs(plantId) {
+export function updateNotes(plantId, note) {
+  const requestBody = { note };
+  console.log(note);
   return axios
-    .delete(`${API_URL}/api/favourite/${plantId}`, {
+    .patch(`${API_URL}/api/favourite/${plantId}`, requestBody, {
       headers: { Authorization: `Bearer ${localStorage.getItem("authToken")}` },
     })
     .then((response) => response.data)

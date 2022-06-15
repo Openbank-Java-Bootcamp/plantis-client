@@ -1,5 +1,6 @@
-import React from "react";
-import { deletePlant, deletePlantFromFavs } from "../services/index";
+import React, { useState } from "react";
+import { deletePlant, updateNotes } from "../services/index";
+
 function MyPlantCard({
   image,
   name,
@@ -8,7 +9,18 @@ function MyPlantCard({
   lightRequirement,
   waterRequirement,
   notes,
+  getFavouritePlant,
 }) {
+  const [writtenNote, setWrittenNote] = useState(notes);
+
+  const handleNotes = (e) => setWrittenNote(e.target.value);
+
+  const handleFormSubmit = (e) => {
+    // <== ADD
+    e.preventDefault();
+    updateNotes(id, writtenNote);
+  };
+
   return (
     <div className="MyPlantCard">
       <img src={image} alt="" className="plant-images" />
@@ -16,12 +28,20 @@ function MyPlantCard({
       <p>{description}</p>
       <p>Light requirement: {lightRequirement}</p>
       <p>Water requirement: {waterRequirement}</p>
-     
-      <p>Notes: {notes}</p>
-      <button type="submit">Add a note</button>
-      <button type="submit">Edit a note</button>
-      <button onClick={() => deletePlant(id)}>Remove</button>
-  
+
+      {/*  <p>Notes: {notes}</p> */}
+      {/* <form>
+        <input type={textArea} value={notes} />>
+        <button type="submit">Edit a note</button>
+      </form> */}
+      <form onSubmit={handleFormSubmit}>
+        <textarea name="notes" value={writtenNote} onChange={handleNotes} />
+        <button type="submit">Save Note</button>
+      </form>
+
+      <button onClick={() => deletePlant(id, getFavouritePlant)}>
+        Remove Plant
+      </button>
     </div>
   );
 }
