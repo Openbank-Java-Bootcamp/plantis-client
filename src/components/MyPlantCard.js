@@ -1,5 +1,5 @@
 import React from "react";
-import { deletePlantFromFavs } from "../services/index";
+import { deletePlant, deletePlantFromFavs } from "../services/index";
 function MyPlantCard({
   image,
   name,
@@ -20,7 +20,7 @@ function MyPlantCard({
       <p>Notes: {notes}</p>
       <button type="submit">Add a note</button>
       <button type="submit">Edit a note</button>
-      <button onClick={() => deletePlantFromFavs(id)}>Remove</button>
+      <button onClick={() => deletePlant(id)}>Remove</button>
       {/*  </form> */}
     </div>
   );

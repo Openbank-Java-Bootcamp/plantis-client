@@ -42,7 +42,10 @@ export function getPlantsByUserId(userId) {
       },
       { params: { userId: userId } }
     )
-    .then((response) => response.data)
+    .then((response) => {
+      console.log(response.data);
+      return response.data;
+    })
     .catch((error) => console.log(error));
 }
 
@@ -56,10 +59,10 @@ export function deletePlant(plantId) {
 }
 
 export function deletePlantFromFavs(plantId) {
-    return axios
-        .delete(`${API_URL}/api/favourite/${plantId}`, {  
-        headers: { Authorization: `Bearer ${localStorage.getItem("authToken")}`},
-        })
-        .then((response) => response.data)  
-        .catch((error) => console.log(error));
+  return axios
+    .delete(`${API_URL}/api/favourite/${plantId}`, {
+      headers: { Authorization: `Bearer ${localStorage.getItem("authToken")}` },
+    })
+    .then((response) => response.data)
+    .catch((error) => console.log(error));
 }
