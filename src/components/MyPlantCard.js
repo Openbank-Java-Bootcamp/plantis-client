@@ -23,23 +23,23 @@ function MyPlantCard({
 
   return (
     <div className="MyPlantCard">
+
       <img src={image} alt="" className="plant-images" />
-      <p style={{ maxWidth: "400px" }}>{name} </p>
+      <p className="title-plant-card" style={{ maxWidth: "400px" }}>{name} </p>
+      <br></br>
+      <div className="text-info-plant">
       <p>{description}</p>
       <p>Light requirement: {lightRequirement}</p>
       <p>Water requirement: {waterRequirement}</p>
-
-      {/*  <p>Notes: {notes}</p> */}
-      {/* <form>
-        <input type={textArea} value={notes} />>
-        <button type="submit">Edit a note</button>
-      </form> */}
+      </div>
+      <br></br>
+      <div className="form-note">
       <form onSubmit={handleFormSubmit}>
-        <textarea name="notes" value={writtenNote} onChange={handleNotes} />
-        <button type="submit">Save Note</button>
+        <textarea className="textarea-notes" name="notes" value={writtenNote} onChange={handleNotes} />
+        
       </form>
-
-      <button onClick={() => deletePlant(id, getFavouritePlant)}>
+</div>
+      <button className="delete-plant-button" onClick={() => deletePlant(id, getFavouritePlant)}>
         Remove Plant
       </button>
     </div>

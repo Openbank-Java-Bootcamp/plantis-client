@@ -1,4 +1,4 @@
-import React from "react";
+import { useContext } from "react";
 import { getPlantsByUserId } from "../services/index";
 /* import { getPlantsByFavourite } from "../services/index"; */
 import Navbar from "../components/Navbar";
@@ -6,9 +6,12 @@ import Footer from "../components/Footer";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import MyPlantCard from "../components/MyPlantCard";
+import { AuthContext } from "../context/auth.context";
 
 const MyPlant = () => {
+ 
   const [favouritePlant, setFavouritePlant] = useState([]);
+  const {user } = useContext(AuthContext);
   const { userId } = useParams();
 
   const getFavouritePlant = async () => {
@@ -24,13 +27,19 @@ const MyPlant = () => {
   return (
     <div>
       <Navbar />
-      My Plants
+      <div className="title-my-plants">
+      <p> <span>{user && user.name}, here you can add some notes about your plant.</span></p>
+      </div>
+      <div className="container-my-plants">
       {favouritePlant.map((favouritePlant) => (
         <MyPlantCard
           getFavouritePlant={getFavouritePlant}
           {...favouritePlant}
+          
         />
+        
       ))}
+      </div>
       <Footer />
     </div>
   );

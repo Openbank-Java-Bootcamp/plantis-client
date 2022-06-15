@@ -7,7 +7,6 @@ function HomePage() {
     <div className="main-container">
       <div className="main-page">
       <img alt="Logo" src={logo} className="main-logo" />
-       {/*  <h1>Welcome to Plantis!</h1> */}
       </div>
       <div className="home-background">
       <div className='main-text'>
