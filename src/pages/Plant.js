@@ -5,7 +5,7 @@ import { useParams, Link } from "react-router-dom";
 import PlantCard from "../components/PlantCard";
 import {getPlantsByFavourite} from "../services/index"
 import Navbar from "../components/Navbar";
-
+import Footer from "../components/Footer";
 
  const Plant = () => {
     const [plant, setPlant] = useState([]);
@@ -29,6 +29,7 @@ import Navbar from "../components/Navbar";
     <PlantCard {...plant} />
     <p>Add this plant to your profile</p>
     <Link to = '/myplants'><button onClick = {() => getPlantsByFavourite(id)}>Add</button></Link>
+    <Footer />
     </div>
  )
 }

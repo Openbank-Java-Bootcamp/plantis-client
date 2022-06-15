@@ -4,27 +4,36 @@ import { AuthContext } from "../context/auth.context";
 
 
 function Navbar() {
-  const { isLoggedIn, user, logOutUser } = useContext(AuthContext);
+  const { isLoggedIn, logOutUser } = useContext(AuthContext);
 
   return (
     <div>
-    <nav className="Navbar">
-      <Link to="/generalplants">
-        <button>Home</button>
-      </Link>
+    <nav className="navbar">
+    <div className="container-nav-links">
+    <ul className="navbar-nav">
+    <li className="nav-item">
+          <a className="nav-link" href="/generalplants">Home</a>
+        </li>
+     
 
       {isLoggedIn && (
         <>
-          <Link to="/myplants">
-            <button>My plants</button>
+        <li className="nav-item">
+          <a className="nav-link" href="/myplants">My Plants</a>
+        </li>
+          <li className="nav-item">
+          <Link to="/">
+          <a className="logout-link" onClick={logOutUser}>Logout</a>
           </Link>
-          <Link to="/logout">
-          <button onClick={logOutUser}>Logout</button>
-          </Link>
-          <span>Hello! {user && user.name}</span>
+        </li>
+         
+         
+         
         </>
       )}
-
+      </ul>
+</div>
+    </nav>
       {!isLoggedIn && (
         <>
           <Link to="/signup">
@@ -35,8 +44,7 @@ function Navbar() {
           </Link>
         </>
       )}
-    
-    </nav>
+      
     
     </div>
   );

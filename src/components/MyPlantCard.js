@@ -16,12 +16,12 @@ function MyPlantCard({
       <p>{description}</p>
       <p>Light requirement: {lightRequirement}</p>
       <p>Water requirement: {waterRequirement}</p>
-      {/*    <form onSubmit={handleFormSubmit}> */}
+     
       <p>Notes: {notes}</p>
       <button type="submit">Add a note</button>
       <button type="submit">Edit a note</button>
       <button onClick={() => deletePlant(id)}>Remove</button>
-      {/*  </form> */}
+  
     </div>
   );
 }

@@ -7,11 +7,11 @@ import LoginPage from "./pages/LoginPage";
 import IsAnon from "./components/IsAnon";
 import Allplants from "./pages/AllPlants";
 import IsPrivate from "./components/IsPrivate";
-import LogOutPage from "./pages/LogOutPage";
+
 import MyPlants from "./pages/MyPlants";
 import Plant from "./pages/Plant";
 import IsLoggedIn from "./components/IsLoggedIn";
-import Footer from "./components/Footer";
+
 
 function App() {
   return (
@@ -71,10 +71,10 @@ function App() {
           }
         />
         <Route
-          path="/logout"
+          path="/"
           element={
             <IsAnon>
-              <LogOutPage />
+               <HomePage />
             </IsAnon>
           }
         />
