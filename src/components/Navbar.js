@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../context/auth.context";
-
+import logo from '../images/logo.png'
 
 function Navbar() {
   const { isLoggedIn, logOutUser } = useContext(AuthContext);
@@ -10,9 +10,12 @@ function Navbar() {
     <div>
     <nav className="navbar">
     <div className="container-nav-links">
+    <a className="nav-link" href="/generalplants"><img alt="logo" className="logo-nav" src={logo}/></a>
     <ul className="navbar-nav">
     <li className="nav-item">
-          <a className="nav-link" href="/generalplants">Home</a>
+    <Link to="/">
+    <a className="logout-link" onClick={logOutUser}>Logout</a>
+    </Link>
         </li>
      
 
@@ -22,9 +25,9 @@ function Navbar() {
           <a className="nav-link" href="/myplants">My Plants</a>
         </li>
           <li className="nav-item">
-          <Link to="/">
-          <a className="logout-link" onClick={logOutUser}>Logout</a>
-          </Link>
+          
+          <a className="home-link" href="/generalplants">Home</a>
+          
         </li>
          
          

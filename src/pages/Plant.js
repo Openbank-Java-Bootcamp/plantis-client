@@ -23,9 +23,15 @@ import Footer from "../components/Footer";
 
  return (
     
-    <div>MyPlant
+    <div>
 
 <Navbar />
+
+<div className="title-plant-details">
+<h3>Here is more information about this plant!</h3>
+<p>If this plant is similar to the one you have at home, add it to your section My plants and keep track of all the needs that required.</p>
+
+</div>
     <PlantCard {...plant} />
     <p>Add this plant to your profile</p>
     <Link to = '/myplants'><button onClick = {() => getPlantsByFavourite(id)}>Add</button></Link>
