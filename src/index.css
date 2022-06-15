@@ -341,9 +341,30 @@ nav a:hover::before {
   transition: all 0.2s;
 }
 
+
+
 .textarea-notes {
   background-color: #eeeeee;
 }
+
+/* imagenes main */
+.picture-main-page{
+  width: 300px;
+  height: 400px;
+  object-fit: cover;
+ 
+}
+
+/* .text-second-section{
+  border: none;
+  outline: none;
+  color: rgb(7, 7, 7);
+  background:#fffd83ec;
+  margin-bottom: 5%;
+  padding: 10px 20px;
+
+  border-radius: 5px;
+} */
 
 /* .textarea-notes {
   cursor: text;

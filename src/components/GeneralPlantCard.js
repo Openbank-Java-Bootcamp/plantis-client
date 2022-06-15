@@ -11,6 +11,7 @@ function GeneralPlantCard({
     
     <div className="container-list-all-plants">
     <section className="plants">
+    
     <div className="listplant">
     <Link to={`/plants/${id}`}>
       <div className="plantcard">
@@ -22,6 +23,7 @@ function GeneralPlantCard({
     </Link>
     
     </div>
+   
     </section>
     </div>
     
