@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { deletePlant, updateNotes } from "../services/index";
 import sunny from '../images/sunny.png'
 import water from '../images/water.png'
-
+import plantpot from '../images/plant-pot.png'
 
 function MyPlantCard({
   image,
@@ -31,7 +31,7 @@ function MyPlantCard({
       <img src={image} alt="" className="plant-images" />
       <br></br>
       <br></br>
-      <p className="title-plant-card" style={{ maxWidth: "400px" }}>{name} </p>
+      <p className="title-plant-card" style={{ maxWidth: "400px" }}>{name} <img className="sunny-icon" src={plantpot} alt=""/></p>
       <br></br>
       <div className="text-info-my-plant">
       <div className="text-align"><p>{description}</p></div>

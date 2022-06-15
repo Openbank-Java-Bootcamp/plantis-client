@@ -28,7 +28,7 @@ const MyPlant = () => {
       <Navbar />
       <div className="title-my-plants">
       <br></br>
-      <p> <span>{user && user.name}, here you can check your list of plants and add some notes about them.</span></p>
+      <h3> <span>{user && user.name}, here you can check your list of plants and add some notes about them.</span></h3>
       </div>
       <div className="container-my-plants">
       {favouritePlant.map((favouritePlant) => (
