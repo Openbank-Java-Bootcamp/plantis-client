@@ -1,6 +1,5 @@
 import { useContext } from "react";
 import { getPlantsByUserId } from "../services/index";
-/* import { getPlantsByFavourite } from "../services/index"; */
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { useState, useEffect } from "react";
@@ -28,7 +27,7 @@ const MyPlant = () => {
     <div>
       <Navbar />
       <div className="title-my-plants">
-      <p> <span>{user && user.name}, here you can add some notes about your plant.</span></p>
+      <p> <span>{user && user.name}, here you can check your list of plants and add some notes about them.</span></p>
       </div>
       <div className="container-my-plants">
       {favouritePlant.map((favouritePlant) => (
