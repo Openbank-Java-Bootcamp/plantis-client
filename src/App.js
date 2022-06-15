@@ -11,7 +11,7 @@ import IsPrivate from "./components/IsPrivate";
 import MyPlants from "./pages/MyPlants";
 import Plant from "./pages/Plant";
 import IsLoggedIn from "./components/IsLoggedIn";
-
+import ErrorPage from "./components/ErrorPage";
 
 function App() {
   return (
@@ -50,6 +50,14 @@ function App() {
           element={
             <IsPrivate>
               <MyPlants />
+            </IsPrivate>
+          }
+        />
+         <Route
+          path="*"
+          element={
+            <IsPrivate>
+              <ErrorPage />
             </IsPrivate>
           }
         />

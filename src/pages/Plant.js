@@ -27,9 +27,12 @@ const Plant = () => {
       <Navbar />
 
       <div className="title-plant-details">
+      <br/>
         <h3>Here is more information about this plant!</h3>
+        <br/>
+        <br/>
         <p>
-          If this plant is similar to the one you have at home, add it to your
+          If this plant is similar to the one you have at home, add it to your<br/>
           section My plants and keep track of all the needs that required.
         </p>
       </div>

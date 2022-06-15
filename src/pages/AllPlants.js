@@ -10,11 +10,16 @@ import picture1 from '../images/picture1.JPG'
 import picture2 from '../images/picture2.JPG'
 import picture3 from '../images/picture3.JPG'
 import picture4 from '../images/picture4.JPG'
-/* import Search from "../components/Search"; */
+/* import Search from "../components/Search";  
+ */
 
 function AllPlants() {
   const [generalPlants, setGeneralPlants] = useState([]);
   const {user } = useContext(AuthContext);
+
+
+  
+
   const getGeneralPlants = async () => {
     const plants = await getPlants();
 
@@ -42,8 +47,10 @@ function AllPlants() {
         <img className="picture-main-page" alt="" src={picture4}/>
       </div>
      <div className="text-second-section">
-   {/*  */}  <h2>If you have a plant similar to the one from the list below click on it and check more details of how to take care of it.</h2>
-
+     <br></br>
+   <h3>If you have a plant similar to the one from the list below click on it and check more details of how to take care of it.
+   </h3>
+{/*    <Search placeholder="Enter a plant..." /> */}
      </div>
       {generalPlants.map((plant) => (
         <GeneralPlantCard key={plant.id} {...plant} />

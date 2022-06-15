@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import { deletePlant, updateNotes } from "../services/index";
+import sunny from '../images/sunny.png'
+import water from '../images/water.png'
+
 
 function MyPlantCard({
   image,
@@ -33,8 +36,8 @@ function MyPlantCard({
       <div className="text-info-my-plant">
       <div className="text-align"><p>{description}</p></div>
       
-      <p>Light requirement: {lightRequirement}</p>
-      <p>Water requirement: {waterRequirement}</p>
+      <p><img className="sunny-icon" src={sunny} alt=""/> Light requirement: {lightRequirement}</p>
+      <p><img className="sunny-icon" src={water} alt=""/> Water requirement: {waterRequirement}</p>
       </div>
       <br></br>
       <div className="form-note">

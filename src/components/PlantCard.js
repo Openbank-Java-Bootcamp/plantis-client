@@ -1,4 +1,6 @@
 import React from "react";
+import sunny from '../images/sunny.png'
+import water from '../images/water.png'
 
 function PlantCard({
   image,
@@ -18,8 +20,8 @@ function PlantCard({
         <br></br>
         <div className="text-info-plant">
         <p>{description}</p>
-        <p>Light requirement: {lightRequirement}</p>
-        <p>Water requirement: {waterRequirement}</p>
+        <p><img className="sunny-icon" src={sunny} alt=""/>Light requirement: {lightRequirement}</p>
+        <p><img className="sunny-icon" src={water} alt=""/>Water requirement: {waterRequirement}</p>
         </div>
       </div>
   

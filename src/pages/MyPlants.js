@@ -27,6 +27,7 @@ const MyPlant = () => {
     <div>
       <Navbar />
       <div className="title-my-plants">
+      <br></br>
       <p> <span>{user && user.name}, here you can check your list of plants and add some notes about them.</span></p>
       </div>
       <div className="container-my-plants">

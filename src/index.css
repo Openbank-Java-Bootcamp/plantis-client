@@ -355,6 +355,28 @@ nav a:hover::before {
  
 }
 
+.sunny-icon{
+  width: 30px;
+  height: 30px;
+}
+.error-picture{
+
+  width: 100%;
+  height: 100%;
+  
+}
+
+.container-error-picture{
+  position: relative;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+
+}
+
 /* .text-second-section{
   border: none;
   outline: none;
