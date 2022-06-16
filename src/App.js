@@ -1,5 +1,4 @@
 import "./App.css";
-
 import HomePage from "./pages/HomePage";
 import SignupPage from "./pages/SignupPage";
 import { Routes, Route } from "react-router-dom";
@@ -7,13 +6,13 @@ import LoginPage from "./pages/LoginPage";
 import IsAnon from "./components/IsAnon";
 import Allplants from "./pages/AllPlants";
 import IsPrivate from "./components/IsPrivate";
-
 import MyPlants from "./pages/MyPlants";
 import Plant from "./pages/Plant";
 import IsLoggedIn from "./components/IsLoggedIn";
 import ErrorPage from "./components/ErrorPage";
 import AddGeneralPlant from "./pages/AddGeneralPlant";
 import IsAdmin from "./components/IsAdmin";
+import EditGeneralPlant from "./pages/EditGeneralPlant";
 
 function App() {
   return (
@@ -69,6 +68,15 @@ function App() {
             </IsAdmin>
           }
         />
+        <Route
+          path="/editgeneralplants/:id"
+          element={
+            <IsAdmin>
+              <EditGeneralPlant />
+            </IsAdmin>
+          }
+        />
+
         <Route
           path="/signup"
           element={

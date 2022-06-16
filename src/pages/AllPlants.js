@@ -75,8 +75,10 @@ function AllPlants() {
           />
         </div>
         {updatePlants.map((plant) => (
-          <GeneralPlantCard key={plant.id} {...plant} />
+          <GeneralPlantCard key={plant.id} {...plant}  />
+          
         ))}
+       
       </div>
       <Footer />
     </>

@@ -15,7 +15,7 @@ function MyPlantCard({
   getFavouritePlant,
 }) {
   const [writtenNote, setWrittenNote] = useState(notes);
-  /* const [toggle, setToggle] = useState(false); */
+
 
   const handleNotes = (e) => setWrittenNote(e.target.value);
 
@@ -24,9 +24,6 @@ function MyPlantCard({
     updateNotes(id, writtenNote);
   };
 
-  /* const triggerToggle = () => {
-        setToggle( !toggle )
-    } */
 
 
   console.log("light", lightRequirement)

@@ -8,6 +8,7 @@ import { AuthContext } from "../context/auth.context";
 const API_URL = "http://localhost:5005";
 
 function EditGeneralPlant(props) {
+  const [image, setImage] = useState("");
     const [name, setName] = useState("");
     const [description, setDescription] = useState("");
     const [lightRequirement, setLightRequirement] = useState("");
@@ -30,6 +31,7 @@ function EditGeneralPlant(props) {
       .then((response) => {
         
         const onePlant = response.data;
+        setImage(onePlant.image);
         setName(onePlant.name);
         setDescription(onePlant.description);
         setLightRequirement(onePlant.lightRequirement);
@@ -77,7 +79,13 @@ function EditGeneralPlant(props) {
       <h3>Edit Plant</h3>
 
       <form onSubmit={handleFormSubmit}>
-      
+      <label>Image:</label>
+        <input
+          type="text"
+          name="image"
+          value={image}
+          onChange={(e) => setImage(e.target.value)}
+        />
       <label>Name:</label>
         <input
           type="text"

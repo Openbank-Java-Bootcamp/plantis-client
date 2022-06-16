@@ -6,16 +6,39 @@ import Navbar from "../components/Navbar";
 const API_URL = "http://localhost:5005";
 
 function AddGeneralPlant(props) {
-  const [onePlant, setOnePlant]=useState("");
+  const [onePlant, setOnePlant] = useState("");
   const [name, setName] = useState("");
   const [image, setImage] = useState("");
   const [description, setDescription] = useState("");
   const [lightRequirement, setLightRequirement] = useState("");
   const [waterRequirement, setWaterRequirement] = useState("");
 
+  const onFormChange = (e) => {
+    console.log("file to upload:", e.target.files[0]);
+    let file = e.target.files[0];
+
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = _handleReaderLoaded.bind(this);
+
+      reader.readAsBinaryString(file);
+    }
+  };
+
+  const _handleReaderLoaded = (readerEvt) => {
+    let binaryString = readerEvt.target.result;
+    setImage(btoa(binaryString));
+  };
+
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    const body = { onePlant };
+    const body = {
+      name,
+      image,
+      description,
+      lightRequirement,
+      waterRequirement,
+    };
     const storedToken = localStorage.getItem("authToken");
 
     axios
@@ -23,29 +46,24 @@ function AddGeneralPlant(props) {
         headers: { Authorization: `Bearer ${storedToken}` },
       })
       .then((response) => {
-   
-        setOnePlant("");
-        
-      
+        setName("");
+        setImage("");
+        setDescription("");
+        setLightRequirement("");
+        setWaterRequirement("");
       })
       .catch((error) => console.log(error));
   };
 
-
-  return( 
-  <div className="AddDiary">
-  <Navbar />
+  return (
+    <div className="Add-Plant-Form">
+      <Navbar />
       <h3>Add New Plant</h3>
-  
-      <form onSubmit={handleFormSubmit}>
-      <label>Image:</label>
-        <input
-          type="text"
-          name="name"
-          value={image}
-          onChange={(e) => setImage(e.target.value)}
-        />
-      <label>Name:</label>
+
+      <form onSubmit={handleFormSubmit} onChange={(e) => onFormChange(e)}>
+        <label>Image:</label>
+        <input type="file" name="image" id="file" accept=".jpeg, .png, .jpg" />
+        <label>Name:</label>
         <input
           type="text"
           name="name"
@@ -73,14 +91,11 @@ function AddGeneralPlant(props) {
           value={waterRequirement}
           onChange={(e) => setWaterRequirement(e.target.value)}
         />
-        
-       
-        
+
         <button type="submit">Update Plant</button>
       </form>
-      
-      </div>
-  )
+    </div>
+  );
 }
 
 export default AddGeneralPlant;
