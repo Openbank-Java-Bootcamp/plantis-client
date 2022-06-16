@@ -4,7 +4,7 @@ import { AuthContext } from "../context/auth.context";
 import logo from '../images/logo.png'
 
 function Navbar() {
-  const { isLoggedIn, logOutUser } = useContext(AuthContext);
+  const { isLoggedIn, logOutUser, user } = useContext(AuthContext);
 
   return (
     <div>
@@ -29,7 +29,14 @@ function Navbar() {
           <a className="home-link" href="/generalplants">Home</a>
           
         </li>
-         
+        {user.roleName === "ROLE_ADMIN" && 
+          <li className="nav-item">
+          
+          <a className="admin-link" href="/addgeneralplants">Add Plants</a>
+          
+        </li>
+        }
+      
          
          
         </>

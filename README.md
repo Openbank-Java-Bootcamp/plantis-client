@@ -14,14 +14,19 @@ account.
 - **404**- As a user I want to see a nice 404 page when I go to a page that doesn’t exist so that I know it was my fault.
 - **My plants** - As a user I want to see my plants and add notes.
  
-## Backlog
+## Technologies Used
+- React
+- Visual Studio Code
+
+## Future Work
  
 My plants page:
 - Water calendar.
 - Image upload.
  
 Homepage
-- Search-bar
+- Search
+- Improve styles
 
 
 ## React Router Routes (React App)
@@ -74,7 +79,7 @@ Homepage
 https://trello.com/b/VoT43A4O/plantis
  
 
-### Wireframes
+
 
 
 

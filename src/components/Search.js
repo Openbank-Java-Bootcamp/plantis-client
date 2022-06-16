@@ -1,4 +1,4 @@
-/* import { Divider, Input } from "antd";
+ import { Divider, Input } from "antd";
 import { useState } from "react";
 
 
@@ -19,4 +19,4 @@ function Search({filterPlants}) {
     </div>
   );
 }
-export default Search; */
+export default Search; 

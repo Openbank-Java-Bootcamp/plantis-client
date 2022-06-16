@@ -12,11 +12,12 @@ import MyPlants from "./pages/MyPlants";
 import Plant from "./pages/Plant";
 import IsLoggedIn from "./components/IsLoggedIn";
 import ErrorPage from "./components/ErrorPage";
+import AddGeneralPlant from "./pages/AddGeneralPlant";
+import IsAdmin from "./components/IsAdmin";
 
 function App() {
   return (
     <div className="App">
-      
       <Routes>
         <Route
           path="/"
@@ -28,7 +29,6 @@ function App() {
         />
 
         <Route
-        
           path="/generalplants"
           element={
             <IsPrivate>
@@ -53,7 +53,7 @@ function App() {
             </IsPrivate>
           }
         />
-         <Route
+        <Route
           path="*"
           element={
             <IsPrivate>
@@ -61,7 +61,14 @@ function App() {
             </IsPrivate>
           }
         />
-
+        <Route
+          path="/addgeneralplants"
+          element={
+            <IsAdmin>
+              <AddGeneralPlant />
+            </IsAdmin>
+          }
+        />
         <Route
           path="/signup"
           element={
@@ -82,11 +89,10 @@ function App() {
           path="/"
           element={
             <IsAnon>
-               <HomePage />
+              <HomePage />
             </IsAnon>
           }
         />
-        
       </Routes>
     </div>
   );
