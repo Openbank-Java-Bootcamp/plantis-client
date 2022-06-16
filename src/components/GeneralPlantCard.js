@@ -7,7 +7,9 @@ function GeneralPlantCard({ image, name, id }) {
 
   return (
     <div className="">
+    
       <section className="container-list-all-plants">
+        
         <div className="listplant">
           <Link to={`/plants/${id}`}>
             <div className="plantcard-1">

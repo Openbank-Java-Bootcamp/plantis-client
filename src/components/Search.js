@@ -1,6 +1,6 @@
- import { Divider, Input } from "antd";
-import { useState } from "react";
 
+import { useState } from "react";
+import iconLupa from '../images/lupa.png'
 
 function Search({filterPlants}) {
   const [search, setSearch] = useState("");
@@ -14,8 +14,20 @@ function Search({filterPlants}) {
  
   return (
     <div className="searchBar-container">
-      <Divider className="searchBar-divider">Search</Divider>
-      <Input value={search} type="text" onChange={handleSearchInput}/>
+      <br/>
+      <br/>
+      <div className="CardInner">
+  
+  <div className="container">
+  
+    <img className="Icon-lupa" src={iconLupa} alt=""/>
+  
+      <input className="input-search" value={search} type="text" onChange={handleSearchInput} placeholder="Search for your plant..."/>
+     </div>
+</div>
+      <br/>
+      <br/>
+      
     </div>
   );
 }

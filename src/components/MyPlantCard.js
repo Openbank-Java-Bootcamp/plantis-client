@@ -31,7 +31,7 @@ function MyPlantCard({
 <div className="my-plant-card-main">
     <div className="My-Plant-Card">
 
-      <img src={image} alt="" className="plant-images" />
+      <img src={`data:image/png;base64,${image}`} alt="" className="plant-images" />
       <br></br>
       <br></br>
       <p className="title-plant-card" style={{ maxWidth: "400px" }}>{name} <img className="sunny-icon" src={plantpot} alt=""/></p>
@@ -39,9 +39,9 @@ function MyPlantCard({
       <div className="text-info-my-plant">
       <div className="text-align"><p>{description}</p></div>
       
-      <p><img className="sunny-icon" src={sunny} alt=""/> Light requirement: {lightRequirement}</p>
+      <p><img className="sunny-icon" src={sunny} alt=""/> Light: {lightRequirement}</p>
    
-      <p><img className="sunny-icon" src={water} alt=""/> Water requirement: {waterRequirement}</p>
+      <p><img className="sunny-icon" src={water} alt=""/> Water: {waterRequirement}</p>
       </div>
       <br></br>
       <div className="form-note">

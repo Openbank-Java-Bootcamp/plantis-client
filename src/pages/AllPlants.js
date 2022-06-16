@@ -67,18 +67,15 @@ function AllPlants() {
           <h3>
             If you have a plant similar to the one from the list below click on
             it and check more details of how to take care of it.
+
           </h3>
-          {/*    <Search placeholder="Enter a plant..." /> */}
-          <Search
-            filterPlants={filterPLantsList}
-            placeholder="Enter a plant..."
-          />
+          <br/>
+          <Search filterPlants={filterPLantsList} />
         </div>
+    
         {updatePlants.map((plant) => (
-          <GeneralPlantCard key={plant.id} {...plant}  />
-          
+          <GeneralPlantCard key={plant.id} {...plant} />
         ))}
-       
       </div>
       <Footer />
     </>

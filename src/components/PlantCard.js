@@ -16,15 +16,15 @@ function PlantCard({
     
       <div className="MyPlantCard">
       
-        <img src={image} alt="" className="plant-images"/>
+        <img src={`data:image/png;base64,${image}`} alt="" className="plant-images"/>
         <br></br>
         <br></br>
         <p className="title-plant-card" style={{ maxWidth: "400px" }}>{name} <img className="sunny-icon" src={plantpot} alt=""/></p>
         <br></br>
         <div className="text-info-plant">
         <p>{description}</p>
-        <p><img className="sunny-icon" src={sunny} alt=""/> Light requirement: {lightRequirement}</p>
-        <p><img className="sunny-icon" src={water} alt=""/> Water requirement: {waterRequirement}</p>
+        <p><img className="sunny-icon" src={sunny} alt=""/> Light: {lightRequirement}</p>
+        <p><img className="sunny-icon" src={water} alt=""/> Water: {waterRequirement}</p>
         </div>
       </div>
   
