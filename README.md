@@ -73,6 +73,8 @@ account.
   
   ## Resources
   - Google
+  - Canva for creating logo
+  - Color picker for CSS
   - Raymond & Shaun
   
 
