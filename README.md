@@ -1,7 +1,7 @@
 # Plantis - Client
 
 ## Description
-Plantis is an app where users can track the plants that have at home, you can choose the plant you have, add it to your profile and then add notes.
+Plantis is an app where users can track the plants that have at home, you can choose the plant you have, add it to your profile and then add notes. Also as an admin you can delete plants, upload pictures and edit them.
  
 ## User Stories
  
@@ -13,21 +13,20 @@ account.
 - **Login/Signup Validations** - As a user I want to see a well described message if I add wrong the login and signup.
 - **404**- As a user I want to see a nice 404 page when I go to a page that doesn’t exist so that I know it was my fault.
 - **My plants** - As a user I want to see my plants and add notes.
+- **Add plants** - As an admin I want to upload an image and add a new plant into the database.
+- **Edit plants** - As an admin I want to update the current plants.
+- **Delete plants** - As an admin I want to delete the plants from the database.
  
 ## Technologies Used
 - React
-- Visual Studio Code
+- CSS
+- Javascript
+- HTML
 
 ## Future Work
- 
-My plants page:
 - Water calendar.
-- Image upload.
+- Improve style.
  
-Homepage
-- Search
-- Improve styles
-
 
 ## React Router Routes (React App)
 | Path                      | Component            | Permissions                 | Behavior                                                                             |
@@ -38,7 +37,7 @@ Homepage
 | `/logout`                 | LogoutPage           | anon only `<AnonRoute>`     | Logout navigate to homepage                                              |
 | `/generalplants`          | AllPlantsPage        | user only `<PrivateRoute>`  | Page that shows  plants options.                                                     |
 | `/myplants`                | MyPlantPage          | user only  `<PrivateRoute>` | Shows the user plant profile, that also renders an edit form to add notes    |
-| `/plant/:id`               | plantPage       | user only `<PrivateRoute>`  | Page with details of the plant.                                  |
+| `/plans/:id`               | plantPage       | user only `<PrivateRoute>`  | Page with details of the plant.                                  |
 
                                          
 
@@ -72,6 +71,11 @@ Homepage
   
 <br>
   
+  ## Resources
+  - Google
+  - Raymond & Shaun
+  
+
   ## Links
  
 ### Trello
