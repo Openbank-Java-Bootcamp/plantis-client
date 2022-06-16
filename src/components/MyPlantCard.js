@@ -19,11 +19,10 @@ function MyPlantCard({
   const handleNotes = (e) => setWrittenNote(e.target.value);
 
   const handleFormSubmit = (e) => {
-    // <== ADD
     e.preventDefault();
     updateNotes(id, writtenNote);
   };
-
+  console.log("light", lightRequirement)
   return (
 <div className="my-plant-card-main">
     <div className="My-Plant-Card">
@@ -37,6 +36,7 @@ function MyPlantCard({
       <div className="text-align"><p>{description}</p></div>
       
       <p><img className="sunny-icon" src={sunny} alt=""/> Light requirement: {lightRequirement}</p>
+   
       <p><img className="sunny-icon" src={water} alt=""/> Water requirement: {waterRequirement}</p>
       </div>
       <br></br>
@@ -48,12 +48,14 @@ function MyPlantCard({
       <div>  <button className="save-note-button" type="submit">Save Note</button></div>
       </form>
 </div>
+
       <button className="delete-plant-button" onClick={() => deletePlant(id, getFavouritePlant)}>
         Remove Plant
       </button>
       </div>
     </div>
   );
+  
 }
 
 export default MyPlantCard;

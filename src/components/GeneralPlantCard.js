@@ -9,12 +9,12 @@ function GeneralPlantCard({
 }) {
   return (
     
-    <div className="container-list-all-plants">
-    <section className="plants">
+    <div className="">
+    <section className="container-list-all-plants">
     
     <div className="listplant">
     <Link to={`/plants/${id}`}>
-      <div className="plantcard">
+      <div className="plantcard-1">
       
         <img src={image} alt="" className="plant-images"/>
         <p className="name-plant" style={{ maxWidth: "400px" }}>{name} </p>

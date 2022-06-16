@@ -13,8 +13,8 @@ function Navbar() {
     <a className="nav-link" href="/generalplants"><img alt="logo" className="logo-nav" src={logo}/></a>
     <ul className="navbar-nav">
     <li className="nav-item">
-    <Link to="/">
-    <a className="logout-link" onClick={logOutUser}>Logout</a>
+    <Link to="/" className="logout-link" onClick={logOutUser}>
+    Logout
     </Link>
         </li>
      
