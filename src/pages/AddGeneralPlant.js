@@ -1,12 +1,11 @@
 import axios from "axios";
 import React, { useState } from "react";
-import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 
 const API_URL = "http://localhost:5005";
 
 function AddGeneralPlant(props) {
-  const [onePlant, setOnePlant] = useState("");
+ 
   const [name, setName] = useState("");
   const [image, setImage] = useState("");
   const [description, setDescription] = useState("");
@@ -91,8 +90,7 @@ function AddGeneralPlant(props) {
           value={waterRequirement}
           onChange={(e) => setWaterRequirement(e.target.value)}
         />
-
-        <button type="submit">Update Plant</button>
+        <button type="submit">Add Plant</button>
       </form>
     </div>
   );

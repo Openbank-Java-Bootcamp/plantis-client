@@ -16,6 +16,23 @@ function EditGeneralPlant(props) {
     
     const { isLoggedIn, user } = useContext(AuthContext);
     const [generalPlants, setGeneralPlants] = useState(null);
+
+    const onFormChange = (e) => {
+      console.log("file to upload:", e.target.files[0]);
+      let file = e.target.files[0];
+  
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = _handleReaderLoaded.bind(this);
+  
+        reader.readAsBinaryString(file);
+      }
+    };
+  
+    const _handleReaderLoaded = (readerEvt) => {
+      let binaryString = readerEvt.target.result;
+      setImage(btoa(binaryString));
+    };
   
   const { id } = useParams(); 
 
@@ -47,7 +64,7 @@ function EditGeneralPlant(props) {
     e.preventDefault();
     const storedToken = localStorage.getItem("authToken");
 
-    const requestBody = { name, description, lightRequirement, waterRequirement };
+    const requestBody = {image, name, description, lightRequirement, waterRequirement };
 
     axios
       .put(`${API_URL}/api/generalplants/${id}`, requestBody, {
@@ -55,7 +72,7 @@ function EditGeneralPlant(props) {
       })
       .then((response) => {
       
-        navigate("/generalplants/" + id);
+        navigate("/generalplants/");
       });
   };
   
@@ -78,14 +95,9 @@ function EditGeneralPlant(props) {
       
       <h3>Edit Plant</h3>
 
-      <form onSubmit={handleFormSubmit}>
+      <form onSubmit={handleFormSubmit} onChange={(e) => onFormChange(e)}>
       <label>Image:</label>
-        <input
-          type="text"
-          name="image"
-          value={image}
-          onChange={(e) => setImage(e.target.value)}
-        />
+      <input type="file" name="image" id="file" accept=".jpeg, .png, .jpg" />
       <label>Name:</label>
         <input
           type="text"

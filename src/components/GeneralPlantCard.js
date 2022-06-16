@@ -1,9 +1,6 @@
 import { React, useContext } from "react";
 import { Link } from "react-router-dom";
-/* import { deleteGeneralPlant} from '../pages/EditGeneralPlant' */
 import { AuthContext } from "../context/auth.context";
-import axios from "axios";
-import { useNavigate } from "react-router-dom";
 
 function GeneralPlantCard({ image, name, id }) {
   const { user } = useContext(AuthContext);
