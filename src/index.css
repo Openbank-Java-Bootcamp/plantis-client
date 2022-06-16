@@ -416,3 +416,18 @@ border-color: rgb(97, 170, 114);
   cursor: pointer;
   border-radius: 5px;
 }
+
+/* EditPlant */
+.edit-link{
+  color: green
+}
+.update-plant-button{
+  border: none;
+  outline: none;
+  color: #fff;
+  background: #fdbaecec;
+  margin-bottom: 5%;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+}

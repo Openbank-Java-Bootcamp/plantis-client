@@ -4,6 +4,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import GeneralPlantCard from "../components/GeneralPlantCard";
 import Navbar from "../components/Navbar"; 
 import { AuthContext } from "../context/auth.context";
+import video from '../images/video.mp4'
 
 const API_URL = "http://localhost:5005";
 
@@ -93,49 +94,69 @@ function EditGeneralPlant(props) {
     <div className="Edit-general-plant">
       <Navbar />
       
-      <h3>Edit Plant</h3>
+      
 
-      <form onSubmit={handleFormSubmit} onChange={(e) => onFormChange(e)}>
-      <label>Image:</label>
+      <form className="formtoadd" onSubmit={handleFormSubmit} onChange={(e) => onFormChange(e)}>
+      <h1>Edit or delete a plant!</h1>
+      <div className="section-add">
+      <label>Image:
       <input type="file" name="image" id="file" accept=".jpeg, .png, .jpg" />
-      <label>Name:</label>
+      </label>
+      </div>
+      <div className="section-add">
+      <label>Name:
         <input
           type="text"
           name="name"
           value={name}
           onChange={(e) => setName(e.target.value)}
         />
-        <label>Description:</label>
+        </label>
+        </div>
+        <div className="section-add">
+        <label>Description:
         <input
           type="text"
           name="description"
           value={description}
           onChange={(e) => setDescription(e.target.value)}
         />
-        <label>Light Requirement:</label>
+        </label>
+        </div>
+        <div className="section-add">
+        <label>Light Requirement:
         <input
           type="text"
           name="light requirement"
           value={lightRequirement}
           onChange={(e) => setLightRequirement(e.target.value)}
         />
-        <label>Water Requirement:</label>
+        </label>
+        </div>
+        <div className="section-add">
+        <label>Water Requirement:
         <input
           type="text"
           name="water requirement"
           value={waterRequirement}
           onChange={(e) => setWaterRequirement(e.target.value)}
         />
-        
-       
-        
-        <button type="submit">Update Plant</button>
+        </label>
+        </div>
+        <br></br>
+        <button className="update-plant-button" type="submit">Update Plant</button>
+        <br></br>
+        <button className="delete-plant-button" onClick={deleteGeneralPlant}>Delete Plant</button>
       </form>
 
-      <button onClick={deleteGeneralPlant}>Delete Plant</button>
+      
 
       {generalPlants &&
         generalPlants.generalPlants.map((editGeneralPlant) => <GeneralPlantCard key={editGeneralPlant.id} {...editGeneralPlant} />)}
+    
+        <video autoPlay loop id="video_background" preload="auto" muted >
+   <source src={video} type="video/mp4" />
+ </video>
     </div>
   );
 }

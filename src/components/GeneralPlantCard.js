@@ -24,7 +24,7 @@ function GeneralPlantCard({ image, name, id }) {
             </div>
           </Link>
           {user.roleName === "ROLE_ADMIN" && (
-            <a href={`/editgeneralplants/${id}`}>Edit plant</a>
+            <a className="edit-link" href={`/editgeneralplants/${id}`}>- Edit plant -</a>
           )}
         </div>
       </section>
