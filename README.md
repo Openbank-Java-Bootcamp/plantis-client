@@ -10,9 +10,7 @@ Plantis is an app where users can track the plants that have at home, you can ch
 - Javascript
 - HTML
 
-## Future Work
-- Water calendar.
-- Improve style.
+
  
 
 ## React Router Routes (React App)
@@ -58,11 +56,16 @@ Plantis is an app where users can track the plants that have at home, you can ch
   
 <br>
   
+## Future Work
+- Water calendar.
+- Improve style.
+
   ## Resources
   - Google
   - Canva for creating logo
   - Color picker for CSS
   - Raymond & Shaun
+
   
 
   ## Links
