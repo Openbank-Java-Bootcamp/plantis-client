@@ -7,8 +7,10 @@ function IsAdmin({ children }) {
 
   // If the authentication is still loading
   if (isLoading) return <p>Loading ...</p>;
-  if (!isLoggedIn){return <Navigate to="/login" />;}
-  if (isLoggedIn  && user.roleName === "ROLE_USER") {
+  if (!isLoggedIn) {
+    return <Navigate to="/login" />;
+  }
+  if (isLoggedIn && user.roleName === "ROLE_USER") {
     // If the admin is logged in, navigate to home page
     return <Navigate to="/generalplants" />;
   } else {

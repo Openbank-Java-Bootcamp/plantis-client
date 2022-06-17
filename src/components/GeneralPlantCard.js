@@ -7,9 +7,7 @@ function GeneralPlantCard({ image, name, id }) {
 
   return (
     <div className="">
-    
       <section className="container-list-all-plants">
-        
         <div className="listplant">
           <Link to={`/plants/${id}`}>
             <div className="plantcard-1">
@@ -24,7 +22,9 @@ function GeneralPlantCard({ image, name, id }) {
             </div>
           </Link>
           {user.roleName === "ROLE_ADMIN" && (
-            <a className="edit-link" href={`/editgeneralplants/${id}`}>- Edit plant -</a>
+            <a className="edit-link" href={`/editgeneralplants/${id}`}>
+              - Edit plant -
+            </a>
           )}
         </div>
       </section>

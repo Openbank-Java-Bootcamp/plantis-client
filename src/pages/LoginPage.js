@@ -34,7 +34,7 @@ const API_URL = "http://localhost:5005";
 
         storeToken(response.data.authToken);
         authenticateUser();
-        navigate("/generalplants"); // <== ADD
+        navigate("/generalplants"); 
       })
       .catch((error) => {
         const errorDescription = error.response.data.errors[0].defaultMessage;
